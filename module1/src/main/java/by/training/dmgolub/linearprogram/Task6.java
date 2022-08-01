@@ -1,4 +1,4 @@
-package by.training.dmgolub.linearprograms;
+package by.training.dmgolub.linearprogram;
 
 /*  Для данной области составить линейную программу, которая печатает true, если точка
     с координатами (x, y) принадлежит закрашенной области, и false - в противном случае.        */

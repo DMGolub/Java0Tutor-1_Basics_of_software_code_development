@@ -1,4 +1,4 @@
-package by.training.dmgolub.linearprograms;
+package by.training.dmgolub.linearprogram;
 
 /*  Модуль 1, блок "Линейные программы"
     Задание 1:

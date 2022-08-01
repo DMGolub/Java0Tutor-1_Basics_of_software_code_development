@@ -1,4 +1,4 @@
-package by.training.dmgolub.linearprograms;
+package by.training.dmgolub.linearprogram;
 
 import org.junit.jupiter.api.Test;
 

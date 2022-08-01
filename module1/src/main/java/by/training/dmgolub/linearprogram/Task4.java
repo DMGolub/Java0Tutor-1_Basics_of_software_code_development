@@ -1,4 +1,4 @@
-package by.training.dmgolub.linearprograms;
+package by.training.dmgolub.linearprogram;
 
 /*  Дано действительное число R вида nnn.ddd (три цифровых разряда в дробной и целой частях).
     Поменять местами дробную и целую части числа и вывести полученное значение числа.       */

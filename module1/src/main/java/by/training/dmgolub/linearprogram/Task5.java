@@ -1,4 +1,4 @@
-package by.training.dmgolub.linearprograms;
+package by.training.dmgolub.linearprogram;
 
 /*
     Дано натуральное число T, которое представляет длительность прошедшего времени в секундах.
@@ -12,8 +12,8 @@ public class Task5 {
 
     /**
      * Converts the given number of second into a period of hours, minutes and seconds.
+     * Prints the number of hours, minutes, seconds. Format: HHч MMмин SSс.
      * @param seconds integer positive number of seconds.
-     * @return number of hours, minutes, seconds. Format: HHч MMмин SSс.
      * @throws IllegalArgumentException if the number of seconds is negative.
      */
     public static void convertSecondsIntoTimePassed(int seconds) {
