@@ -16,6 +16,7 @@ public class Task3 {
         int y = scanner.nextInt();
         System.out.println("Result: " + functionValue(x, y));
     }
+
     /**
      * Calculates the value of the function
      * (Math.sin(x) + Math.cos(y)) * Math.tan(x * y) / (Math.cos(x) - Math.sin(y))
