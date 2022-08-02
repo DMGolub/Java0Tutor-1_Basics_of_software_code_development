@@ -1,10 +1,20 @@
 package by.training.dmgolub.linearprogram;
 
-/*  Модуль 1, блок "Линейные программы"
-    Задание 1:
-    Найдите значение функции z = ((a - 3) * b / 2) + c              */
+import java.util.Scanner;
+
+/*    Найдите значение функции z = ((a - 3) * b / 2) + c             */
 public class Task1 {
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a: ");
+        double a = scanner.nextDouble();
+        System.out.print("Enter b: ");
+        double b = scanner.nextDouble();
+        System.out.print("Enter c: ");
+        double c = scanner.nextDouble();
+        System.out.println("Result: " + functionValue(a, b, c));
+    }
     /**
      * Calculates the value of the function ((a - 3) * b / 2) + c
      * @param a double

@@ -5,6 +5,7 @@ package by.training.dmgolub.linearprogram;
 public class Task4 {
 
     public static void main(String[] args) {
+
         swapFractionalAndIntegerParts(111.222);
     }
 

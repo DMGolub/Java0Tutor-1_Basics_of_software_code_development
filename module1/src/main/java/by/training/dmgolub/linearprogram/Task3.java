@@ -2,9 +2,7 @@ package by.training.dmgolub.linearprogram;
 
 import java.util.Scanner;
 
-/*  Модуль 1, блок "Линейные программы"
-    Задание 1:
-    Вычислить значение выражения по формуле (все переменные принимают действительное значение):
+/*  Вычислить значение выражения по формуле (все переменные принимают действительное значение):
     (Math.sin(x) + Math.cos(y)) * Math.tan(x * y) / (Math.cos(x) - Math.sin(y))                 */
 public class Task3 {
 

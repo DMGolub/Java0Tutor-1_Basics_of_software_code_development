@@ -6,6 +6,10 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Iterator;
 
+/*
+!!! Set should not be used !!!
+ */
+
 /*  Даны 2 числа. Определить цифры, входящие в запись
     как первого, так и второго числа.               */
 public class Task8 {
