@@ -7,7 +7,7 @@ public class Point {
     private double y;
 
     public Point(String name, double x, double y) {
-        this.name = name;
+        setName(name);
         this.x = x;
         this.y = y;
     }
@@ -17,6 +17,12 @@ public class Point {
     }
 
     public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("Point name can not be null!");
+        }
+        if (name.isEmpty()) {
+            throw new IllegalArgumentException("Point name can not be an empty string!");
+        }
         this.name = name;
     }
 
@@ -29,6 +35,7 @@ public class Point {
     }
 
     public double getY() {
+
         return y;
     }
 

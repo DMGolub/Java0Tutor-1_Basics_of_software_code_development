@@ -2,6 +2,8 @@ package by.training.dmgolub.branching;
 
 import java.util.Scanner;
 
+/*  Даны три точки A(x1, y1), B(x2, y2), C(x3, y3).
+    Определить, будут ли они расположены на одной прямой.    */
 public class Task3 {
 
     public static void main(String[] args) {
@@ -21,6 +23,7 @@ public class Task3 {
      * @param pointB Point, second point,
      * @param pointC Point, third point.
      * @return true if three points belong to one line and false otherwise.
+     * @author DMGolub
      */
     public static boolean pointsBelongToOneLine(Point pointA, Point pointB, Point pointC) {
         return ((pointA.getX() - pointC.getX()) * (pointB.getY() - pointC.getY()) -
@@ -31,6 +34,7 @@ public class Task3 {
      * Retrieves double coordinates X and Y of a point from console and returns the point.
      * @param pointName String, point name.
      * @return point with specified coordinates and name.
+     * @author DMGolub
      */
     public static Point retrievePointFromConsole(String pointName) {
         if (pointName == null) {

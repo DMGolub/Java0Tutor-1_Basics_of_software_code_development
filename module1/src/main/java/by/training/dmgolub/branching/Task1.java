@@ -26,6 +26,7 @@ public class Task1 {
      * @param angle1 integer first angle (degrees),
      * @param angle2 integer second angle (degrees).
      * @return true if triangle with given angles exists and false otherwise.
+     * @author DMGolub
      */
     public static boolean isTriangle(int angle1, int angle2) {
         return angle1 + angle2 < 180;
@@ -37,6 +38,7 @@ public class Task1 {
      * @param angle1 integer first angle (degrees),
      * @param angle2 integer second angle (degrees).
      * @return true if triangle with given angles is right and false otherwise.
+     * @author DMGolub
      */
     public static boolean isRightTriangle(double angle1, double angle2) {
         return angle1 == 90 || angle2 == 90 || (angle1 + angle2 == 90);
