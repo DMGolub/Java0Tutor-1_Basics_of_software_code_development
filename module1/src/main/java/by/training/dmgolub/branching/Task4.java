@@ -2,36 +2,33 @@ package by.training.dmgolub.branching;
 
 import java.util.Scanner;
 
+import static by.training.dmgolub.parser.Parser.tryParseDouble;
+
 /*  Заданы размеры A, B прямоугольного отверстия и размеры x, y, z кирпича.
     Определить, пройдет ли кирпич через отверстие.                       */
 public class Task4 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            double holeSizeA = tryParseDouble(scanner, "hole size A");
+            double holeSizeB = tryParseDouble(scanner, "hole size B");
+            Hole hole = new Hole(holeSizeA, holeSizeB);
 
-        System.out.print("Enter hole size A: ");
-        double holeSizeA = scanner.nextDouble();
-        System.out.print("Enter hole size B: ");
-        double holeSizeB = scanner.nextDouble();
-        Hole hole = new Hole(holeSizeA, holeSizeB);
+            double brickSizeX = tryParseDouble(scanner, "brick size X");
+            double brickSizeY = tryParseDouble(scanner, "brick size Y");
+            double brickSizeZ = tryParseDouble(scanner, "brick size Z");
+            Brick brick = new Brick(brickSizeX, brickSizeY, brickSizeZ);
 
-        System.out.print("Enter brick size X: ");
-        double brickSizeX = scanner.nextDouble();
-        System.out.print("Enter brick size Y: ");
-        double brickSizeY = scanner.nextDouble();
-        System.out.print("Enter brick size Z: ");
-        double brickSizeZ = scanner.nextDouble();
-        Brick brick = new Brick(brickSizeX, brickSizeY, brickSizeZ);
-
-        if (brickPassesThroughTheHole(brick, hole)) {
-            System.out.println("Brick passes through the hole.");
-        } else {
-            System.out.println("Brick can not pass through the hole.");
+            if (brickPassesThroughTheHole(brick, hole)) {
+                System.out.println("Brick passes through the hole.");
+            } else {
+                System.out.println("Brick can not pass through the hole.");
+            }
         }
     }
 
     /**
-     * Defines if the brick can pass through the hole.
+     * Determines if the brick can pass through the hole.
      * @param brick Brick,
      * @param hole Hole.
      * @return true if he brick can pass through the hole or false otherwise.

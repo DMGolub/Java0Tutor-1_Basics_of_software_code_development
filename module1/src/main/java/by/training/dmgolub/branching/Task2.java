@@ -1,7 +1,22 @@
 package by.training.dmgolub.branching;
 
+import java.util.Scanner;
+
+import static by.training.dmgolub.parser.Parser.tryParseDouble;
+
 /*  Найти max{min(a, b), min(c, d)}                 */
 public class Task2 {
+
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            double a = tryParseDouble(scanner, "a");
+            double b = tryParseDouble(scanner, "b");
+            double c = tryParseDouble(scanner, "c");
+            double d = tryParseDouble(scanner, "d");
+            System.out.println("max{min(a, b), min(c, d)} = "
+                    + maximumOfMinimums(a, b, c, d));
+        }
+    }
 
     /**
      * Returns maximum of two minimums.

@@ -2,6 +2,8 @@ package by.training.dmgolub.branching;
 
 import java.util.Scanner;
 
+import static by.training.dmgolub.parser.Parser.tryParseDouble;
+
 /*  Даны три точки A(x1, y1), B(x2, y2), C(x3, y3).
     Определить, будут ли они расположены на одной прямой.    */
 public class Task3 {
@@ -18,7 +20,7 @@ public class Task3 {
     }
 
     /**
-     * Defines if three specified points belong to one straight line.
+     * Determines if three specified points belong to one straight line.
      * @param pointA Point, first point,
      * @param pointB Point, second point,
      * @param pointC Point, third point.
@@ -44,10 +46,8 @@ public class Task3 {
             throw new IllegalArgumentException("Point name can not be an empty string!");
         }
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter X coordinate for point " + pointName + ": ");
-        double x = scanner.nextDouble();
-        System.out.print("Enter Y coordinate for point " + pointName + ": ");
-        double y = scanner.nextDouble();
+        double x = tryParseDouble(scanner,"X coordinate for point");
+        double y = tryParseDouble(scanner,"Y coordinate for point");
         return new Point(pointName, x, y);
     }
 }

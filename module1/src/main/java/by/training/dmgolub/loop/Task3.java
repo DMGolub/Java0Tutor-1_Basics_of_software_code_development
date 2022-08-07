@@ -4,6 +4,7 @@ package by.training.dmgolub.loop;
 public class Task3 {
 
     public static void main(String[] args) {
+        System.out.print("Sum of squares of one hundred numbers = ");
         sumOfSquares();
     }
 

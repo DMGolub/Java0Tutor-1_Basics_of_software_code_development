@@ -2,27 +2,30 @@ package by.training.dmgolub.branching;
 
 import java.util.Scanner;
 
+import static by.training.dmgolub.parser.Parser.tryParseInt;
+
 /*  Даны два угла треугольника (в градусах). Определить, существует ли
     такой треугольник, и если да, то будет ли он прямоугольным.     */
 public class Task1 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int angle1 = scanner.nextInt();
-        int angle2 = scanner.nextInt();
-        if (isTriangle(angle1, angle2)) {
-            if (isRightTriangle(angle1, angle2)) {
-                System.out.println("Is right triangle");
+        try (Scanner scanner = new Scanner(System.in)) {
+            int angle1 = tryParseInt(scanner, "first angle");
+            int angle2 = tryParseInt(scanner, "second angle");
+            if (isTriangle(angle1, angle2)) {
+                if (isRightTriangle(angle1, angle2)) {
+                    System.out.println("Is right triangle");
+                } else {
+                    System.out.println("Is not right triangle");
+                }
             } else {
-                System.out.println("Is not right triangle");
+                System.out.println("Is not a triangle");
             }
-        } else {
-            System.out.println("Is not a triangle");
         }
     }
 
     /**
-     * Defines whether a triangle with the specified angles exists.
+     * Determines whether a triangle with the specified angles exists.
      * @param angle1 integer first angle (degrees),
      * @param angle2 integer second angle (degrees).
      * @return true if triangle with given angles exists and false otherwise.
@@ -33,7 +36,7 @@ public class Task1 {
     }
 
     /**
-     * Defines whether a triangle with the specified angle is the right
+     * Determines whether a triangle with the specified angle is the right
      * triangle (one angle is 90 degrees).
      * @param angle1 integer first angle (degrees),
      * @param angle2 integer second angle (degrees).

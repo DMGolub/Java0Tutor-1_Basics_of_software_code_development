@@ -1,5 +1,9 @@
 package by.training.dmgolub.linearprogram;
 
+import java.util.Scanner;
+
+import static by.training.dmgolub.parser.Parser.tryParseInt;
+
 /*  Дано натуральное число T, которое представляет длительность прошедшего времени в секундах.
     Вывести данное значение длительности в часах, минутах и секундах в следующей форме:
     HHч MMмин SSс.                                                                          */
@@ -7,6 +11,13 @@ public class Task5 {
 
     private static final int SECONDS_PER_HOUR = 3600;
     private static final int SECONDS_PER_MINUTE = 60;
+
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            int seconds = tryParseInt(scanner, "number of seconds");
+            convertSecondsIntoTimePassed(seconds);
+        }
+    }
 
     /**
      * Converts the given number of second into a period of hours, minutes and seconds.

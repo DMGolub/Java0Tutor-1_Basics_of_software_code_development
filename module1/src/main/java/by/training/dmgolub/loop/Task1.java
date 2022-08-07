@@ -1,5 +1,7 @@
 package by.training.dmgolub.loop;
 
+import by.training.dmgolub.parser.Parser;
+
 import java.math.BigInteger;
 import java.util.Scanner;
 
@@ -8,9 +10,10 @@ import java.util.Scanner;
 public class Task1 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        BigInteger number = scanner.nextBigInteger();
-        sumOfAllNumbers(number);
+        try (Scanner scanner = new Scanner(System.in)) {
+            BigInteger number = Parser.tryParseBigInteger(scanner, "number");
+            sumOfAllNumbers(number);
+        }
     }
 
     /**

@@ -2,17 +2,19 @@ package by.training.dmgolub.linearprogram;
 
 import java.util.Scanner;
 
+import static by.training.dmgolub.parser.Parser.tryParseInt;
+
 /*  Вычислить значение выражения по формуле (все переменные принимают действительное значение):
     (Math.sin(x) + Math.cos(y)) * Math.tan(x * y) / (Math.cos(x) - Math.sin(y))                 */
 public class Task3 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter x: ");
-        int x = scanner.nextInt();
-        System.out.print("Enter y: ");
-        int y = scanner.nextInt();
-        System.out.println("Result: " + functionValue(x, y));
+        try (Scanner scanner = new Scanner(System.in)) {
+            int x = tryParseInt(scanner, "x");
+            int y = tryParseInt(scanner, "y");
+            System.out.println("(Math.sin(x) + Math.cos(y)) * Math.tan(x * y) " +
+                    "/ (Math.cos(x) - Math.sin(y)) = " + functionValue(x, y));
+        }
     }
 
     /**

@@ -1,12 +1,20 @@
 package by.training.dmgolub.linearprogram;
 
+import java.util.Scanner;
+
+import static by.training.dmgolub.parser.Parser.tryParseDouble;
+
 /*  Дано действительное число R вида nnn.ddd (три цифровых разряда в дробной и целой частях).
     Поменять местами дробную и целую части числа и вывести полученное значение числа.       */
 public class Task4 {
 
     public static void main(String[] args) {
-
-        swapFractionalAndIntegerParts(111.222);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Please enter a double value with three digits " +
+                    "in integer part and three digits in fractional parts: nnn.ddd");
+            double number = tryParseDouble(scanner, "number");
+            swapFractionalAndIntegerParts(number);
+        }
     }
 
     /**

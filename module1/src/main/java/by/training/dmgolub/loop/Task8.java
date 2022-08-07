@@ -1,5 +1,7 @@
 package by.training.dmgolub.loop;
 
+import by.training.dmgolub.parser.Parser;
+
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.HashSet;
@@ -15,12 +17,11 @@ import java.util.Iterator;
 public class Task8 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter first number: ");
-        int number1 = scanner.nextInt();
-        System.out.print("Enter second number: ");
-        int number2 = scanner.nextInt();
-        printFiguresContainedInBothNumbers(number1, number2);
+        try (Scanner scanner = new Scanner(System.in)) {
+            int number1 = Parser.tryParseInt(scanner, "first number");
+            int number2 = Parser.tryParseInt(scanner, "second number");
+            printFiguresContainedInBothNumbers(number1, number2);
+        }
     }
 
     /**

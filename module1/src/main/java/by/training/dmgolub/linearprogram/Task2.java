@@ -2,20 +2,22 @@ package by.training.dmgolub.linearprogram;
 
 import java.util.Scanner;
 
+import static by.training.dmgolub.parser.Parser.tryParseDouble;
+
 /*  Вычислить значение выражения по формуле (все переменные принимают действительное значение):
     (b + sqrt(b * b + 4 * a * c)) / (2 * a) - pow(a, 3) + pow(b, -2)                        */
 public class Task2 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a: ");
-        double a = scanner.nextDouble();
-        System.out.print("Enter b: ");
-        double b = scanner.nextDouble();
-        System.out.print("Enter c: ");
-        double c = scanner.nextDouble();
-        System.out.println("Result: " + functionValue(a, b, c));
+        try (Scanner scanner = new Scanner(System.in)) {
+            double a = tryParseDouble(scanner, "a");
+            double b = tryParseDouble(scanner, "b");
+            double c = tryParseDouble(scanner, "c");
+            System.out.println("(b + sqrt(b * b + 4 * a * c)) / (2 * a) - pow(a, 3) + pow(b, -2): "
+                    + functionValue(a, b, c));
+        }
     }
+
     /**
      * Calculates the value of the function
      * (b + sqrt(b * b + 4 * a * c)) / (2 * a) - pow(a, 3) + pow(b, -2)

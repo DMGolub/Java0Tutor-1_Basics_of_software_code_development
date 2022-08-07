@@ -1,9 +1,20 @@
 package by.training.dmgolub.branching;
 
+import java.util.Scanner;
+
+import static by.training.dmgolub.parser.Parser.tryParseInt;
+
 /*  Вычислить значение функции:
     x * x - 3 * x + 9, если x <= 3,
     1 / (x * x * x - 6), если x > 3.            */
 public class Task5 {
+
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            double x = tryParseInt(scanner, "x");
+            System.out.println("Function value = " + functionValue(x));
+        }
+    }
 
     /**
      * Calculates the value of the function:

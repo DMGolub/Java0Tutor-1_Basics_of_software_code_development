@@ -11,7 +11,10 @@ import java.math.BigInteger;
 public class Task4 {
 
     public static void main(String[] args) {
-        productOfSquares(200);
+        int numberOfElements = 200;
+        System.out.print("Result of multiplication of the first "
+                + numberOfElements + " elements");
+        productOfSquares(numberOfElements);
     }
 
     /**

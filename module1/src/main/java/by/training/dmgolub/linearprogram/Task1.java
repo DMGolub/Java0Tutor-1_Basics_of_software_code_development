@@ -2,19 +2,20 @@ package by.training.dmgolub.linearprogram;
 
 import java.util.Scanner;
 
+import static by.training.dmgolub.parser.Parser.tryParseDouble;
+
 /*    Найдите значение функции z = ((a - 3) * b / 2) + c             */
 public class Task1 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a: ");
-        double a = scanner.nextDouble();
-        System.out.print("Enter b: ");
-        double b = scanner.nextDouble();
-        System.out.print("Enter c: ");
-        double c = scanner.nextDouble();
-        System.out.println("Result: " + functionValue(a, b, c));
+        try (Scanner scanner = new Scanner(System.in)) {
+            double a = tryParseDouble(scanner, "a");
+            double b = tryParseDouble(scanner, "b");
+            double c = tryParseDouble(scanner, "c");
+            System.out.println("(a - 3) * b / 2 + c = " + functionValue(a, b, c));
+        }
     }
+
     /**
      * Calculates the value of the function ((a - 3) * b / 2) + c
      * @param a double

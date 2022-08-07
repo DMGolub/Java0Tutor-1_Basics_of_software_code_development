@@ -1,7 +1,7 @@
 package by.training.dmgolub.loop;
 
 /*  Вывести на экран соответствия между символами
-    и их численными обозначения в памяти компьютера.       */
+    и их численными обозначениями в памяти компьютера.       */
 public class Task6 {
 
     public static void main(String[] args) {

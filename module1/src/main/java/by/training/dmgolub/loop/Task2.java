@@ -1,22 +1,25 @@
 package by.training.dmgolub.loop;
 
+import by.training.dmgolub.parser.Parser;
+
 import java.util.Scanner;
 import java.util.function.Function;
 
+/*  Вычислить значения функции на отрезке [a, b] с шагом h:
+    y = x, if x > 2;
+    y = -x, if x <= 2;                                   */
 public class Task2 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a: ");
-        double a = scanner.nextDouble();
-        System.out.print("Enter b: ");
-        double b = scanner.nextDouble();
-        System.out.print("Enter h: ");
-        double h = scanner.nextDouble();
-        if (a < b) {
-            computeFunctionValue(a, b, h, func);
-        } else {
-            computeFunctionValue(b, a, h, func);
+        try (Scanner scanner = new Scanner(System.in)) {
+            double a = Parser.tryParseDouble(scanner,"range start (a)");
+            double b = Parser.tryParseDouble(scanner,"range end (b)");
+            double h = Parser.tryParseDouble(scanner,"step (h)");
+            if (a < b) {
+                computeFunctionValue(a, b, h, func);
+            } else {
+                computeFunctionValue(b, a, h, func);
+            }
         }
     }
 
